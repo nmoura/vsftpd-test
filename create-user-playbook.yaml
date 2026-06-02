@@ -10,4 +10,5 @@
         groups: wheel
         create_home: yes
         shell: /bin/bash
+        password: "{{ nmoura_password | password_hash('sha512') }}"
       become: true
