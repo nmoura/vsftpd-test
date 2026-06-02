@@ -1,0 +1,16 @@
+- name: install an ftp server
+  hosts: all
+
+  tasks:
+
+    - name: Install vsftpd package
+      ansible.builtin.dnf:
+        name: vsftpd
+        state: present
+      become: true
+
+    - name: Start the vsftpd service unit
+      ansible.builtin.service:
+        name: vsftpd
+        state: started
+      become: true
