@@ -1,0 +1,13 @@
+- name: create a user
+  hosts: all
+
+  tasks:
+
+    - name: Create a user
+      ansible.builtin.user:
+        name: nmoura
+        comment: Nilton Moura
+        groups: wheel
+        create_home: yes
+        shell: /bin/bash
+      become: true
